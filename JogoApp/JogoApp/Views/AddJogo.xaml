@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:JogoApp.Views"
+             x:Class="JogoApp.Views.AddJogo"
+             Title="Incluir um novo Jogo">
+    
+    <StackLayout Padding="10" Spacing="5">
+        <local:JogoView />
+        <Button x:Name="SubmitButton" Command="{Binding AddJogoCommand}" BorderRadius="0" Text="Salvar Jogo" 
+                FontAttributes="Bold" TextColor="White" BackgroundColor="#69b069"/>
+        <Label Text="Ver Todos os Jogos" IsVisible="{Binding IsViewAll}" x:Name="ViewLbl" TextColor="Blue" 
+               BackgroundColor="Aqua" HorizontalOptions="EndAndExpand" FontSize="15">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ViewAllJogosCommand}" NumberOfTapsRequired="1" />
+            </Label.GestureRecognizers>
+        </Label>
+    </StackLayout>
+    
+</ContentPage>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JogoApp.Views.JogoLista"
+             Title="Relação de Jogos">
+
+    <StackLayout>
+        <Button Text="Novo Jogo" FontAttributes="Bold" 
+                    BorderRadius="0" HeightRequest="40" BorderColor="Black" BackgroundColor="#69b069" 
+                    BorderWidth="1"  TextColor="White"  Command="{Binding AddCommand}" />
+
+        <ListView x:Name="JogoListView" HasUnevenRows="true" SeparatorColor="Azure" 
+                  ItemsSource="{Binding JogoLista}"  
+                  SelectedItem="{Binding SelectedJogoItem,Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                       <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Titulo}" Font="15" TextColor="Black" />
+                            <Label Text="{Binding RM}" 
+                                   Font="15" 
+                                   HorizontalOptions="EndAndExpand" 
+                                   TextColor="Black" />
+                       </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Deletar Todos os Jogos" BorderRadius="0" 
+                VerticalOptions="EndAndExpand" 
+                FontAttributes="Bold" TextColor="White" 
+                BackgroundColor="#f6546a" 
+                Command="{Binding DeleteAllJogosCommand}" />
+  </StackLayout>
+
+</ContentPage>

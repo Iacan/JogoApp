@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:util="clr-namespace:JogoApp.Util"
+             x:Class="JogoApp.Views.JogoView">
+  <ContentView.Content>
+        <StackLayout Spacing="5">
+            <Picker x:Name="picker" Title="Selecione uma Categoria">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Ação</x:String>
+                        <x:String>Aventura</x:String>
+                        <x:String>Estratégia</x:String>
+                        <x:String>RPG</x:String>
+                        <x:String>Esporte</x:String>
+                        <x:String>Corrida</x:String>
+                        <x:String>Simulação</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Entry x:Name="txtTitulo" Text="{Binding Titulo}" HeightRequest="40" BackgroundColor="White" 
+                   Placeholder="Nome do Jogo" HorizontalOptions="FillAndExpand"/>
+            <Entry x:Name="txtLink" Text="{Binding Link}" BackgroundColor="White"  HeightRequest="40"   
+                   Placeholder="Link Jogo" HorizontalOptions="FillAndExpand"/>
+            <Entry x:Name="txtRM" Text="{Binding RM}" 
+                   Keyboard="Numeric" HeightRequest="40" BackgroundColor="White" 
+                   Placeholder="Preço do Jogo" HorizontalOptions="FillAndExpand"/>
+            <Editor x:Name="txtDescricao" Text="{Binding Descricao}" BackgroundColor="#e6f3e3" 
+                    HeightRequest="150" MaxLength="300" 
+                    AutoSize="TextChanges"
+                    Placeholder="Detalhes do Jogos" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
